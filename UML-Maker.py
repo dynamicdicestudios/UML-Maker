@@ -65,10 +65,15 @@ for name in var:
 fig = plt.figure(dpi=80)
 ax = fig.add_subplot(1,1,1)
 table_data=[
-    [classes[0]],
+    [],
     [var],
     [methods]
 ]
+
+if len(classes) == 0:
+    table_data[0] = "N/A"
+else:
+    table_data[0] = classes[0]
 
 """for name in var:
     table_data[1].append(name)
