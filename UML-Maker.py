@@ -1,18 +1,20 @@
 import matplotlib.pyplot as plt 
 
+#variables used for goig through data
 classes = []
 methods = []
 var = []
 temp = []
 no_spaces = ""
 
+#file that is being looked through
 code = open("example.py", 'r')
 
 for line in code:
     if "class" in line:
         name = []
-        no_spaces = line
-        no_spaces = no_spaces.strip()
+        no_spaces = line #stores the line in a variable for it to be mutable
+        no_spaces = no_spaces.strip() #gets rid of unnecessary spaces
         temp = no_spaces.split(" ")
         classes.append(temp[1])
         for index in classes[len(classes)-1]:
